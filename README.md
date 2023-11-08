@@ -12,6 +12,10 @@ In the project guidelines it was mentioned to group by listId and to sort by lis
 
 Another requirement was the sorting by name. The names are strings. In the example, however, every item is named "Item X" where X represents the id. It was assumed because the names are strings that they by sorted lexicographically, as in real-life items will have more descriptive names. As such, "Item 700" will show before "Item 71" as it is lexicographically smaller.
 
+## Source code
+
+The main source code for this project can be found in the FetchAndroidApp/app/src/main/ directory.
+
 ## Project set up
 
 The project was developed using Android Studio Girrafe.
