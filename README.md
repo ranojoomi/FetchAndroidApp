@@ -10,11 +10,11 @@ In the project guidelines it was mentioned to group by listId and to sort by lis
 
 #### #2 Sort by name
 
-Another requirement was the sorting by name. The names are strings. In the example however, every item is name "Item X" where X represents the id. It was assumed because the names are strings that they by sorted lexicographically, as in real life items will have more descriptive names. As such, "Item 700" will show before "Item 71" as it is lexicographically smaller.
+Another requirement was the sorting by name. The names are strings. In the example, however, every item is named "Item X" where X represents the id. It was assumed because the names are strings that they by sorted lexicographically, as in real-life items will have more descriptive names. As such, "Item 700" will show before "Item 71" as it is lexicographically smaller.
 
 ## Project set up
 
-The project was developed using Andriod Studio Girrafe.
+The project was developed using Android Studio Girrafe.
 
 #### Step 1: Install Andriod Studio if required
 
@@ -28,5 +28,4 @@ The project was developed using Andriod Studio Girrafe.
 
 #### Optional: If you run into any errors while building the project simply clean and rebuild the project.
 
-Thanks! I learned a lot doing this and hopefully you enjoy going through it.
-
+Thanks! I learned a lot doing this and hopefully, you enjoy going through it.
