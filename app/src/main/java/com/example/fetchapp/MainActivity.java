@@ -37,6 +37,20 @@ public class MainActivity extends AppCompatActivity {
 
         if (response != null) {
             List<Item> allItems = dataFetcher.convertToJSON(response);
+            Map<Integer, List<Item>> ItemsGroupedAndSorted = dataFetcher.groupAndSort(allItems);
+
+            for (Map.Entry<Integer, List<Item>> entry : ItemsGroupedAndSorted.entrySet()) {
+                int listId = entry.getKey();
+                List<Item> itemsForListId = entry.getValue();
+
+                RecyclerView recyclerView = new RecyclerView(this);
+                recyclerView.setHasFixedSize(true);
+                LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+                recyclerView.setLayoutManager(layoutManager);
+
+                RecyclerView.Adapter adapter = new CustomAdapter(itemsForListId);
+
+            }
 
             mRecyclerView = findViewById(R.id.recyclerView);
             mRecyclerView.setHasFixedSize(true);

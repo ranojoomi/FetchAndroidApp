@@ -58,14 +58,6 @@ public class DataFetch {
                 filteredItemList.add(item);
             }
         }
-
-        filteredItemList.sort((o1, o2) -> {
-            if (o1.getListId() == o2.getListId()) {
-                return o1.getName().compareTo(o2.getName());
-            }
-            return o1.getListId() - o2.getListId();
-        });
-
         return filteredItemList;
     }
 
