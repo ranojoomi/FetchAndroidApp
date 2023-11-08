@@ -16,7 +16,7 @@ Another requirement was the sorting by name. The names are strings. In the examp
 
 The project was developed using Android Studio Girrafe.
 
-#### Step 1: Install Andriod Studio if required
+#### Step 1: Install Android Studio if required
 
 #### Step 2: In the welcome page, click on "Get from VCS"
 
