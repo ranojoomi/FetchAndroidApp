@@ -9,10 +9,8 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -61,14 +59,11 @@ public class DataFetch {
             }
         }
 
-        Collections.sort(filteredItemList, new Comparator<Item>() {
-            @Override
-            public int compare(Item o1, Item o2) {
-                if (o1.getItemId() == o2.getItemId()) {
-                    return o1.getName().compareTo(o2.getName());
-                }
-                return o1.getItemId() - o2.getItemId();
+        filteredItemList.sort((o1, o2) -> {
+            if (o1.getListId() == o2.getListId()) {
+                return o1.getName().compareTo(o2.getName());
             }
+            return o1.getListId() - o2.getListId();
         });
 
         return filteredItemList;
@@ -79,12 +74,12 @@ public class DataFetch {
         Map<Integer, List<Item>> group = new TreeMap<>();
 
         for (Item item : items) {
-            if (group.containsKey(item.getItemId())) {
-                group.get(item.getItemId()).add(item);
+            if (group.containsKey(item.getListId())) {
+                group.get(item.getListId()).add(item);
             } else {
                 List<Item> toPut = new ArrayList<>();
                 toPut.add(item);
-                group.put(item.getItemId(), toPut);
+                group.put(item.getListId(), toPut);
             }
         }
 
@@ -98,8 +93,5 @@ public class DataFetch {
         }
         return group;
     }
-
-
-
 
 }

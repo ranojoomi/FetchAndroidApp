@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        TextView errorTextView = (TextView) findViewById(R.id.errorTextView);
 
         Thread myThread = new MyThread();
         myThread.start();
@@ -42,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(mAdapter);
+        } else {
+            errorTextView.setVisibility(View.VISIBLE);
         }
 
     }

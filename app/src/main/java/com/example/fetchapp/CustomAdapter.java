@@ -15,9 +15,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     private final List<Item> dataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameView;
-        private TextView listIdView;
-        private TextView idView;
+        private final TextView nameView;
+        private final TextView listIdView;
+        private final TextView idView;
 
         public ViewHolder(View view) {
             super(view);
@@ -45,7 +45,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         Item currentItem = dataset.get(position);
 
-        String listId = String.valueOf(currentItem.getItemId()); // Convert to string
+        String listId = String.valueOf(currentItem.getListId()); // Convert to string
         String id = String.valueOf(currentItem.getId());
 
         viewHolder.nameView.setText("Name: " + currentItem.getName());

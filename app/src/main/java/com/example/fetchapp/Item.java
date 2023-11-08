@@ -2,9 +2,9 @@ package com.example.fetchapp;
 
 public class Item {
 
-    private String name;
-    private int listId;
-    private int id;
+    private final String name;
+    private final int listId;
+    private final int id;
 
     public Item(String name, int listId, int id) {
         this.name = name;
@@ -16,7 +16,7 @@ public class Item {
         return this.name;
     }
 
-    public int getItemId() {
+    public int getListId() {
         return this.listId;
     }
 
