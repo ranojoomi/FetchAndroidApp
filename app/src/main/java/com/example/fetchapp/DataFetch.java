@@ -9,11 +9,7 @@ import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeMap;
 
 public class DataFetch {
 
@@ -68,30 +64,4 @@ public class DataFetch {
 
         return filteredItemList;
     }
-
-    public Map<Integer, List<Item>> groupAndSort(List<Item> items) {
-
-        Map<Integer, List<Item>> group = new TreeMap<>();
-
-        for (Item item : items) {
-            if (group.containsKey(item.getListId())) {
-                group.get(item.getListId()).add(item);
-            } else {
-                List<Item> toPut = new ArrayList<>();
-                toPut.add(item);
-                group.put(item.getListId(), toPut);
-            }
-        }
-
-        for (Map.Entry<Integer, List<Item>> entry : group.entrySet()) {
-            Collections.sort(entry.getValue(), new Comparator<Item>() {
-                @Override
-                public int compare(Item o1, Item o2) {
-                    return o1.getName().compareTo(o2.getName());
-                }
-            });
-        }
-        return group;
-    }
-
 }
